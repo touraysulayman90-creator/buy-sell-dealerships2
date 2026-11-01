@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b0b0b">
+  <meta name="description" content="Buy & Sell Dealerships — find your next car in The Gambia. Browse vehicles or contact us on WhatsApp.">
+  <title>Buy & Sell Dealerships | Find Your Next Car</title>
+  <style>
+    :root{--gold:#d5ad58;--gold2:#f0d58e;--black:#090909;--panel:#141414;--muted:#aaa}
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{margin:0;background:var(--black);color:#f7f4ed;font-family:Arial,Helvetica,sans-serif;line-height:1.6}
+    a{color:inherit;text-decoration:none}
+    .wrap{width:min(1120px,92%);margin:auto}
+    header{position:sticky;top:0;z-index:10;background:rgba(8,8,8,.94);backdrop-filter:blur(12px);border-bottom:1px solid #28231a}
+    nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{font-weight:900;letter-spacing:1.4px;font-size:17px}.brand span{color:var(--gold)}
+    .links{display:flex;gap:26px;font-size:13px;color:#ddd}.links a:hover{color:var(--gold)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 19px;border-radius:4px;background:var(--gold);color:#111;font-weight:800;font-size:13px;border:1px solid var(--gold);transition:.2s}
+    .btn:hover{background:var(--gold2);transform:translateY(-2px)}
+    .btn.outline{background:transparent;color:var(--gold)}
+    .hero{min-height:610px;display:flex;align-items:center;position:relative;overflow:hidden;background:linear-gradient(90deg,rgba(0,0,0,.94) 0%,rgba(0,0,0,.78) 48%,rgba(0,0,0,.12) 100%),url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=2000&q=85') center/cover}
+    .hero:after{content:"";position:absolute;inset:auto 0 0;height:100px;background:linear-gradient(transparent,var(--black))}
+    .hero-content{position:relative;z-index:1;max-width:650px;padding:80px 0}
+    .eyebrow{color:var(--gold);font-size:12px;letter-spacing:3px;text-transform:uppercase;font-weight:800}
+    h1{font-size:clamp(42px,7vw,76px);line-height:1.02;margin:18px 0;font-weight:900;letter-spacing:-2px}
+    h1 span{color:var(--gold)}.hero p{color:#d0ccc4;max-width:510px;font-size:17px;margin-bottom:30px}
+    .actions{display:flex;gap:12px;flex-wrap:wrap}
+    section{padding:78px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:30px}
+    h2{font-size:clamp(28px,4vw,42px);line-height:1.1;margin:8px 0 0}
+    .sub{color:var(--muted);max-width:520px;margin:10px 0 0}
+    .inventory{background:#101010}
+    .empty{border:1px solid #302a20;background:linear-gradient(135deg,#171510,#101010);padding:46px 25px;text-align:center;border-radius:8px}
+    .empty .icon{font-size:40px}.empty h3{font-size:23px;margin:12px 0 6px}.empty p{color:var(--muted);max-width:480px;margin:0 auto 20px}
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:32px}
+    .feature{padding:25px;background:var(--panel);border:1px solid #252525;border-radius:6px}
+    .feature b{color:var(--gold);font-size:13px;letter-spacing:1px}.feature h3{margin:10px 0 6px}.feature p{color:var(--muted);font-size:14px;margin:0}
+    .sell{background:linear-gradient(110deg,#17130b,#0d0d0d);border-top:1px solid #2a2418;border-bottom:1px solid #2a2418}
+    .sellbox{display:flex;align-items:center;justify-content:space-between;gap:30px}.sellbox p{color:#c5c0b5;max-width:600px}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:center}
+    .about-photo{min-height:330px;border-radius:7px;background:url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1100&q=85') center/cover}
+    .about-copy p{color:var(--muted)}
+    .contact{background:#101010}
+    .contact-card{background:#171717;border:1px solid #302a20;border-radius:8px;padding:34px;display:flex;align-items:center;justify-content:space-between;gap:25px}
+    .contact-card p{color:var(--muted);margin-bottom:0}
+    footer{padding:25px 0;border-top:1px solid #292929;color:#888;font-size:12px}
+    .foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    .wa-float{position:fixed;right:20px;bottom:20px;z-index:20;background:#1fae62;color:white;padding:13px 18px;border-radius:30px;font-weight:800;box-shadow:0 5px 25px #0008;font-size:13px}
+    @media(max-width:760px){.links{display:none}.hero{min-height:570px;background-position:60% center}.features{grid-template-columns:1fr}.about-grid{grid-template-columns:1fr}.about-photo{min-height:240px}.sellbox,.contact-card{align-items:flex-start;flex-direction:column}.section-head{align-items:flex-start;flex-direction:column}section{padding:58px 0}nav{height:66px}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap"><nav>
+    <a class="brand" href="#home">BUY <span>&</span> SELL <span>DEALERSHIPS</span></a>
+    <div class="links"><a href="#home">Home</a><a href="#cars">Cars</a><a href="#sell">Sell a car</a><a href="#about">About</a><a href="#contact">Contact</a></div>
+    <a class="btn" href="https://wa.me/220866898871?text=Hello%20Buy%20%26%20Sell%20Dealerships%2C%20I%27m%20interested%20in%20a%20vehicle.">WhatsApp Us</a>
+  </nav></div>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="wrap"><div class="hero-content">
+      <div class="eyebrow">Your trusted car connection · The Gambia</div>
+      <h1>FIND YOUR<br>NEXT <span>DRIVE.</span></h1>
+      <p>Looking to buy or sell a vehicle? Make your next move with Buy & Sell Dealerships. Straightforward service, great cars and direct contact.</p>
+      <div class="actions">
+        <a class="btn" href="#cars">Explore Vehicles</a>
+        <a class="btn outline" href="https://wa.me/220866898871?text=Hello%2C%20I%20want%20to%20sell%20my%20car.">Sell Your Car</a>
+      </div>
+    </div></div>
+  </section>
+
+  <section class="inventory" id="cars">
+    <div class="wrap">
+      <div class="section-head"><div><div class="eyebrow">Our selection</div><h2>Vehicles for every journey.</h2><p class="sub">Our online showroom is being prepared. Contact us directly to ask about current availability.</p></div></div>
+      <div class="empty">
+        <div class="icon">🚘</div>
+        <h3>New arrivals coming soon</h3>
+        <p>We're updating our vehicle listings. Message us on WhatsApp and tell us what make, model or budget you're looking for.</p>
+        <a class="btn" href="https://wa.me/220866898871?text=Hello%2C%20please%20send%20me%20your%20available%20cars.">Ask about available cars</a>
+      </div>
+      <div class="features">
+        <div class="feature"><b>01 / BUY</b><h3>Find your next car</h3><p>Tell us what you're looking for and we'll help you explore available options.</p></div>
+        <div class="feature"><b>02 / SELL</b><h3>List your vehicle</h3><p>Get in touch with your vehicle details and photos to discuss a sale.</p></div>
+        <div class="feature"><b>03 / CONNECT</b><h3>Talk to us directly</h3><p>Ask questions and arrange the next steps through WhatsApp.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sell" id="sell"><div class="wrap"><div class="sellbox">
+    <div><div class="eyebrow">Have a vehicle to sell?</div><h2>Let's find it a new owner.</h2><p>Send us the make, model, year, mileage, asking price and a few clear photos. We'll get back to you to discuss the details.</p></div>
+    <a class="btn" href="https://wa.me/220866898871?text=Hello%20Buy%20%26%20Sell%20Dealerships%2C%20I%20would%20like%20to%20list%20my%20car.%20Make%2Fmodel%3A%20">List your car on WhatsApp</a>
+  </div></div></section>
+
+  <section id="about"><div class="wrap about-grid">
+    <div class="about-photo" role="img" aria-label="Luxury sports car"></div>
+    <div class="about-copy"><div class="eyebrow">Who we are</div><h2>Driven by the right deal.</h2>
+      <p>Buy & Sell Dealerships connects people who are looking to buy or sell vehicles in The Gambia. Our goal is to make it easier to enquire, compare options and connect directly.</p>
+      <p>Have a question? Reach out and tell us what you need. We're happy to hear from you.</p>
+      <a class="btn" href="#contact">Get in touch</a>
+    </div>
+  </div></section>
+
+  <section class="contact" id="contact"><div class="wrap"><div class="contact-card">
+    <div><div class="eyebrow">Let's talk cars</div><h2>Ready to make a move?</h2><p>Call or WhatsApp us: +220 866898871</p></div>
+    <a class="btn" href="https://wa.me/220866898871?text=Hello%20Buy%20%26%20Sell%20Dealerships!">Chat on WhatsApp</a>
+  </div></div></section>
+</main>
+<footer><div class="wrap foot"><div>© <span id="year"></span> Buy & Sell Dealerships. All rights reserved.</div><div>The Gambia · Buy smart. Sell with confidence.</div></div></footer>
+<a class="wa-float" href="https://wa.me/220866898871?text=Hello%20Buy%20%26%20Sell%20Dealerships!">WhatsApp ↗</a>
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body>
+</html>
